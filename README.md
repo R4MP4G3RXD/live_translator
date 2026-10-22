@@ -1,3 +1,22 @@
+The idea behind this project was to have a piece of (mostly) open source FREE software that can interpret speech which could be used with a local llm.
+Originally this project was meant to be something that is very specific and only works from one language to another, but this soon spiraled and it became the thing it is today.
+This software is primarily based around my needs as I would like to deploy this in church.
+The translation can be done locally with an language model or via API keys but this being said the translations aren't always accurate and might need review for custom prompts for the translation backend which is why I asked for a log of the whole transcription and translation.
+The program can run as a standalone but this project also comes with a separate "light weight" client which can interact with the main translator in server mode allowing your compute server to be in a different location than your client which in my mind is useful for noise reduction (ex. server with the gpu(s) in the server room and client in the church). The main translator app can also work as a client if you want the full app on both systems.
+
+What hardware you run this on is ultimately going to decide how fast and accurate your text is going to be (also depends on what model you are using), but I managed to get around a 3-5s delay from speaking to translated narration with a local translation model (TranslateGemma 4B Q5_K_M) running on unsupported and frankly quite outdated hardware (Radeon RX 5700XT). 
+Keep in mind my use case is pretty tasking tho because I'm translating from Hungarian to Serbian, which is a difficult thing to do in general because of the differently structured languages; and LLM's have a particularly difficult time with this because of the similarities between languages in the balkans. 
+
+For transparency; this project is fully vibe coded with Claude but tested by me.
+Feel free to fork this project and do with it what you please
+
+For disclosure; I do not own any LLM's mentioned and/or used in this project, nor do I own any translation LLM or software that is used.
+
+
+
+Anyway, yapping over; the full documentation written by the lovely coding "assistant" is below:
+
+
 # Live Translator
 
 Microphone or line-in → **NVIDIA Parakeet TDT v3** → **Azure / Gemini / local TranslateGemma** → black window with the translated text, narrated. The sentence stays on screen until its narration finishes, then the next one appears. Every sentence is logged (transcript + translation).
