@@ -1,0 +1,23 @@
+# Core (client and server need nothing extra; a server without a screen does not need Tk)
+numpy
+sounddevice
+requests
+onnx-asr[hub]        # Parakeet via ONNX Runtime (do NOT use the [cpu]/[gpu] extras, see README)
+
+# Narration
+edge-tts             # neural voices, word-level timing (needs internet)
+pygame               # audio playback + playback position for the word highlighting
+# pyttsx3            # optional: offline system voices (estimated timing only)
+
+# Optional: lets 'no translation' mode detect the spoken language when it is set to auto
+# langdetect
+
+# Optional recognition engines (install only what you use; see README "Recognition engines")
+# faster-whisper        # Whisper via CTranslate2: NVIDIA CUDA or CPU
+# qwen-asr              # Qwen3-ASR; also needs PyTorch (a CUDA/ROCm build for GPU, else CPU)
+
+# ONNX Runtime: install exactly ONE of these, matching your hardware (see README)
+onnxruntime-directml    # AMD / Intel / NVIDIA GPUs on Windows
+# onnxruntime           # CPU only
+# onnxruntime-gpu       # NVIDIA CUDA
+# onnxruntime-rocm      # AMD on Linux (ROCm), from AMD's wheel index

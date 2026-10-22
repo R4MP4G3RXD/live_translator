@@ -1,0 +1,5 @@
+# Light client: microphone + black window + narration. The server does the heavy work.
+numpy
+sounddevice
+edge-tts      # narration voices (needs internet). Skip it and untick "Narrate" to only show text
+pygame        # audio playback for the narration
